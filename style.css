@@ -275,7 +275,6 @@ body {
 
 
 
-
 /* =========================================
    REPRODUCTOR DE MÚSICA
    ========================================= */
@@ -286,144 +285,415 @@ body {
 
 .reproductor-musica {
     position: absolute;
-    top: 50%;
+
+    /*
+       Lo bajamos un poco para dejar espacio
+       arriba para el texto que pondrás
+       directamente en Illustrator.
+    */
+    top: 58%;
+
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     width: 82%;
+
     z-index: 20;
+
     color: #8baac6;
+
     text-align: center;
+
     line-height: 1;
 }
-
-.texto-musica {
-    margin: 0 0 18px 0;
-    font-family: Arial, sans-serif;
-    font-size: 4.5vw;
-    font-weight: 500;
-    color: #8baac6;
-    line-height: 1.2;
-}
-
-/* REPRODUCTOR */
 
 .player {
     width: 100%;
 }
 
-/* BARRA DE PROGRESO */
+
+/* =========================================
+   BARRA DE PROGRESO
+   ========================================= */
 
 .barra-musica {
+    position: relative;
+
     width: 100%;
     height: 4px;
-    background-color: rgba(139, 170, 198, 0.35);
+
+    background-color: rgba(139, 170, 198, 0.30);
+
     border-radius: 10px;
-    overflow: hidden;
 }
 
 .progreso-musica {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
     width: 0%;
     height: 100%;
+
     background-color: #8baac6;
+
     border-radius: 10px;
+
     transition: width 0.2s linear;
 }
 
-/* TIEMPOS */
+
+/* Punto que avanza con la canción */
+
+.punto-progreso {
+    position: absolute;
+
+    top: 50%;
+    left: 0%;
+
+    width: 10px;
+    height: 10px;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #8baac6;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   TIEMPOS
+   ========================================= */
 
 .tiempos-musica {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    margin-top: 7px;
+
+    margin-top: 5px;
+
     font-family: Arial, sans-serif;
+
     font-size: 2.5vw;
+
     color: #8baac6;
+
     line-height: 1;
 }
 
-/* CONTROLES */
+
+/* =========================================
+   CONTROLES
+   ========================================= */
 
 .controles-musica {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    margin-top: 12px;
+
+    /*
+       MÁS PEGADO A LA BARRA
+    */
+    margin-top: 7px;
+
     color: #8baac6;
 }
 
-/* ICONOS DECORATIVOS */
 
-.icono-control {
-    font-family: Arial, sans-serif;
-    font-size: 5vw;
-    font-weight: 500;
+/* =========================================
+   CONTROLES LATERALES
+   ========================================= */
+
+.control {
+
+    position: relative;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     color: #8baac6;
-    line-height: 1;
-    user-select: none;
+
+    flex-shrink: 0;
 }
 
-/* BOTÓN CENTRAL */
+
+/* =========================================
+   ANTERIOR
+========================================= */
+
+.icono-anterior .triangulo {
+
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+
+    border-right: 11px solid #8baac6;
+}
+
+.icono-anterior .linea {
+
+    width: 3px;
+    height: 14px;
+
+    background: #8baac6;
+
+    margin-right: 2px;
+}
+
+
+/* =========================================
+   SIGUIENTE
+========================================= */
+
+.icono-siguiente .triangulo {
+
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+
+    border-left: 11px solid #8baac6;
+}
+
+.icono-siguiente .linea {
+
+    width: 3px;
+    height: 14px;
+
+    background: #8baac6;
+
+    margin-left: 2px;
+}
+
+
+/* =========================================
+   BOTÓN PLAY / PAUSA
+   ========================================= */
 
 .boton-play {
+
     width: 58px;
     height: 58px;
+
     border-radius: 50%;
+
     border: none;
+
     background-color: #8baac6;
-    color: white;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     cursor: pointer;
+
     padding: 0;
+
     flex-shrink: 0;
+
     -webkit-tap-highlight-color: transparent;
 }
 
+
+/* Efecto al presionar */
+
 .boton-play:active {
+
     transform: scale(0.94);
 }
 
-#iconoPlay {
-    font-family: Arial, sans-serif;
-    font-size: 23px;
-    margin-left: 3px;
-    line-height: 1;
+
+/* =========================================
+   ICONO PLAY
+   ========================================= */
+
+.play-icon {
+
+    width: 0;
+    height: 0;
+
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-left: 15px solid #ffffff;
+
+    margin-left: 4px;
 }
 
-/* TABLETS / COMPUTADOR */
+
+/* =========================================
+   ICONO PAUSA
+   ========================================= */
+
+.play-icon.pausa {
+
+    width: 14px;
+    height: 18px;
+
+    border: none;
+
+    background:
+
+        linear-gradient(
+            to right,
+            #ffffff 0px,
+            #ffffff 4px,
+            transparent 4px,
+            transparent 10px,
+            #ffffff 10px,
+            #ffffff 14px
+        );
+
+    margin-left: 0;
+}
+
+
+/* =========================================
+   ALEATORIO
+   Dibujado con CSS
+   ========================================= */
+
+.icono-aleatorio::before,
+.icono-aleatorio::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 7px;
+
+    border-top: 1.8px solid #8baac6;
+
+    border-radius: 50%;
+}
+
+
+/* Curvas */
+
+.icono-aleatorio::before {
+
+    transform:
+        rotate(25deg)
+        translateY(-4px);
+}
+
+.icono-aleatorio::after {
+
+    transform:
+        rotate(-25deg)
+        translateY(4px);
+}
+
+
+/* =========================================
+   REPETIR
+   ========================================= */
+
+.icono-repetir::before {
+
+    content: "";
+
+    width: 17px;
+    height: 13px;
+
+    border: 1.8px solid #8baac6;
+
+    border-left-color: transparent;
+
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+
+/* Flechita */
+
+.icono-repetir::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 3px;
+    top: 5px;
+
+    width: 0;
+    height: 0;
+
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+
+    border-left: 6px solid #8baac6;
+}
+
+
+/* =========================================
+   PC / TABLET
+   ========================================= */
 
 @media (min-width: 768px) {
 
     .reproductor-musica {
-        width: 650px;
-    }
 
-    .texto-musica {
-        font-size: 30px;
-        margin-bottom: 22px;
+        width: 650px;
+
+        top: 58%;
     }
 
     .barra-musica {
+
         height: 5px;
     }
 
     .tiempos-musica {
+
         font-size: 16px;
+
+        margin-top: 6px;
+    }
+
+    .controles-musica {
+
         margin-top: 8px;
     }
 
-    .icono-control {
-        font-size: 30px;
+    .control {
+
+        width: 35px;
+        height: 35px;
     }
 
     .boton-play {
+
         width: 70px;
         height: 70px;
     }
 
-    #iconoPlay {
-        font-size: 28px;
+    .play-icon {
+
+        border-top-width: 12px;
+        border-bottom-width: 12px;
+        border-left-width: 18px;
     }
+
 }

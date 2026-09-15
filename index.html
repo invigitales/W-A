@@ -29,38 +29,49 @@
         <!-- W&A-04 -->
         <section class="seccion seccion-musica">
 
-            <img src="imagenes/W-A-04.png" alt="Sección 3" class="img-boda">
+            <img src="imagenes/W-A-04.png" alt="Sección 4" class="img-boda">
 
             <div class="reproductor-musica">
 
-                <p class="texto-musica">
-                    Dale play y eleva una alabanza
-                </p>
-
                 <div class="player">
 
+                    <!-- Barra de progreso -->
                     <div class="barra-musica">
                         <div class="progreso-musica"></div>
+                        <div class="punto-progreso"></div>
                     </div>
 
+                    <!-- Tiempo -->
                     <div class="tiempos-musica">
                         <span id="tiempoActual">0:00</span>
                         <span id="tiempoTotal">0:00</span>
                     </div>
 
+                    <!-- Controles -->
                     <div class="controles-musica">
 
-                        <span class="icono-control">⤨</span>
+                        <!-- Aleatorio -->
+                        <span class="control icono-aleatorio"></span>
 
-                        <span class="icono-control">|◀</span>
+                        <!-- Anterior -->
+                        <span class="control icono-anterior">
+                            <span class="linea"></span>
+                            <span class="triangulo"></span>
+                        </span>
 
+                        <!-- PLAY / PAUSA -->
                         <button id="botonPlay" class="boton-play">
-                            <span id="iconoPlay">▶</span>
+                            <span id="iconoPlay" class="play-icon"></span>
                         </button>
 
-                        <span class="icono-control">▶|</span>
+                        <!-- Siguiente -->
+                        <span class="control icono-siguiente">
+                            <span class="triangulo"></span>
+                            <span class="linea"></span>
+                        </span>
 
-                        <span class="icono-control">↻</span>
+                        <!-- Repetir -->
+                        <span class="control icono-repetir"></span>
 
                     </div>
 

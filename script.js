@@ -155,7 +155,7 @@ function iniciarReproductor() {
 
             audio.pause();
 
-            iconoPlay.textContent = '▶';
+            iconoPlay.classList.remove('pausa');
 
             reproduciendo = false;
 
@@ -164,7 +164,7 @@ function iniciarReproductor() {
             audio.play()
                 .then(function () {
 
-                    iconoPlay.textContent = '❚❚';
+                    iconoPlay.classList.add('pausa');
 
                     reproduciendo = true;
 
@@ -203,7 +203,7 @@ function iniciarReproductor() {
 
     audio.addEventListener('ended', function () {
 
-        iconoPlay.textContent = '▶';
+        iconoPlay.classList.remove('pausa');
 
         reproduciendo = false;
 
