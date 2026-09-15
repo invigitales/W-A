@@ -1,0 +1,274 @@
+/* =========================================
+   1. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    line-height: 0;
+}
+
+
+/* =========================================
+   2. CONTENEDOR PRINCIPAL
+========================================= */
+
+.invitacion {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   3. SECCIONES E IMÁGENES
+========================================= */
+
+.seccion {
+    width: 100%;
+    position: relative;
+
+    display: block;
+
+    line-height: 0;
+}
+
+.img-boda {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    border: none;
+    outline: none;
+}
+
+
+/* =========================================
+   4. FUENTE MIGROSKA
+========================================= */
+
+@font-face {
+    font-family: 'Migroska';
+
+    src: url('fuentes/migroska.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* =========================================
+   5. CUENTA REGRESIVA
+========================================= */
+
+.cuenta-regresiva {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+.cuenta-regresiva h2 {
+    color: #FFFFFF;
+
+    font-size: 9vw;
+
+    font-weight: normal;
+
+    margin: 0 0 20px 0;
+
+    font-family: 'Migroska', 'Times New Roman', serif;
+}
+
+
+/* Fila de números */
+
+.countdown-row {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Cada bloque */
+
+.time-block {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 0 4vw;
+
+    color: #FFFFFF;
+
+    border-right: 2px solid #FFFFFF;
+
+    line-height: 1;
+}
+
+
+/* Quitar línea del último bloque */
+
+.time-block:last-child {
+    border-right: none;
+}
+
+
+/* Números */
+
+.time-block .number {
+    font-size: 10vw;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Texto DÍAS / HS / MIN / SEG */
+
+.time-block .unit {
+    font-size: 4.5vw;
+
+    font-weight: normal;
+
+    margin: 0;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* =========================================
+   6. BOTONES SOBRE LAS IMÁGENES
+========================================= */
+
+.btn-sobrepuesto {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: block;
+
+    z-index: 10;
+}
+
+.btn-sobrepuesto img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================
+   BOTÓN 1 - W&A-07
+========================================= */
+
+.btn1 {
+    top: 80%;
+    width: 65%;
+}
+
+
+/* =========================================
+   BOTÓN 2 - W&A-08
+========================================= */
+
+.btn2 {
+    top: 80%;
+    width: 65%;
+}
+
+
+/* =========================================
+   BOTÓN 3 - W&A-10
+========================================= */
+
+.btn3 {
+    top: 80%;
+    width: 65%;
+}
+
+
+/* =========================================
+   7. CUENTA REGRESIVA EN PC
+========================================= */
+
+@media (min-width: 768px) {
+
+    .cuenta-regresiva h2 {
+        font-size: 70px;
+
+        margin: 0 0 25px 0;
+    }
+
+    .countdown-row {
+        max-width: 600px;
+
+        margin: 0 auto;
+    }
+
+    .time-block .number {
+        font-size: 80px;
+    }
+
+    .time-block .unit {
+        font-size: 36px;
+    }
+
+    .time-block {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================================
+   8. RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .cuenta-regresiva {
+        width: 95%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .cuenta-regresiva {
+        width: 95%;
+    }
+
+}
