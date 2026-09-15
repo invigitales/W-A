@@ -113,4 +113,113 @@ if (document.readyState === 'loading') {
 
     iniciarCuentaRegresiva();
 
+
+}
+
+
+
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA
+   ========================================= */
+
+function iniciarReproductor() {
+
+    const audio = document.getElementById('miAudio');
+    const botonPlay = document.getElementById('botonPlay');
+    const iconoPlay = document.getElementById('iconoPlay');
+
+    const progreso = document.querySelector('.progreso-musica');
+    const tiempoActual = document.getElementById('tiempoActual');
+    const tiempoTotal = document.getElementById('tiempoTotal');
+
+    if (!audio || !botonPlay) return;
+
+    let reproduciendo = false;
+
+    function formatoTiempo(segundos) {
+
+        if (!isFinite(segundos)) {
+            return '0:00';
+        }
+
+        const minutos = Math.floor(segundos / 60);
+        const segundosRestantes = Math.floor(segundos % 60);
+
+        return minutos + ':' + segundosRestantes.toString().padStart(2, '0');
+    }
+
+    botonPlay.addEventListener('click', function () {
+
+        if (reproduciendo) {
+
+            audio.pause();
+
+            iconoPlay.textContent = '▶';
+
+            reproduciendo = false;
+
+        } else {
+
+            audio.play()
+                .then(function () {
+
+                    iconoPlay.textContent = '❚❚';
+
+                    reproduciendo = true;
+
+                })
+                .catch(function (error) {
+
+                    console.error('No se pudo reproducir el audio:', error);
+
+                });
+
+        }
+
+    });
+
+    audio.addEventListener('loadedmetadata', function () {
+
+        tiempoTotal.textContent = formatoTiempo(audio.duration);
+
+    });
+
+    audio.addEventListener('timeupdate', function () {
+
+        if (audio.duration) {
+
+            const porcentaje =
+                (audio.currentTime / audio.duration) * 100;
+
+            progreso.style.width = porcentaje + '%';
+
+            tiempoActual.textContent =
+                formatoTiempo(audio.currentTime);
+
+        }
+
+    });
+
+    audio.addEventListener('ended', function () {
+
+        iconoPlay.textContent = '▶';
+
+        reproduciendo = false;
+
+    });
+
+}
+
+if (document.readyState === 'loading') {
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        iniciarReproductor
+    );
+
+} else {
+
+    iniciarReproductor();
+
 }

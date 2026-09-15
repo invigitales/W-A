@@ -91,7 +91,7 @@ body {
 .cuenta-regresiva h2 {
     color: #FFFFFF;
 
-    font-size: 9vw;
+    font-size: 11vw;
 
     font-weight: normal;
 
@@ -195,7 +195,7 @@ body {
 ========================================= */
 
 .btn1 {
-    top: 89.5%;
+    top: 89%;
     width: 65%;
 }
 
@@ -215,7 +215,7 @@ body {
 ========================================= */
 
 .btn3 {
-    top: 57%;
+    top: 60%;
     width: 65%;
 }
 
@@ -227,7 +227,7 @@ body {
 @media (min-width: 768px) {
 
     .cuenta-regresiva h2 {
-        font-size: 70px;
+        font-size: 85px;
 
         margin: 0 0 25px 0;
     }
@@ -271,4 +271,159 @@ body {
         width: 95%;
     }
 
+}
+
+
+
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA
+   ========================================= */
+
+.seccion-musica {
+    position: relative;
+}
+
+.reproductor-musica {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 82%;
+    z-index: 20;
+    color: #8baac6;
+    text-align: center;
+    line-height: 1;
+}
+
+.texto-musica {
+    margin: 0 0 18px 0;
+    font-family: Arial, sans-serif;
+    font-size: 4.5vw;
+    font-weight: 500;
+    color: #8baac6;
+    line-height: 1.2;
+}
+
+/* REPRODUCTOR */
+
+.player {
+    width: 100%;
+}
+
+/* BARRA DE PROGRESO */
+
+.barra-musica {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(139, 170, 198, 0.35);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progreso-musica {
+    width: 0%;
+    height: 100%;
+    background-color: #8baac6;
+    border-radius: 10px;
+    transition: width 0.2s linear;
+}
+
+/* TIEMPOS */
+
+.tiempos-musica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 2.5vw;
+    color: #8baac6;
+    line-height: 1;
+}
+
+/* CONTROLES */
+
+.controles-musica {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    color: #8baac6;
+}
+
+/* ICONOS DECORATIVOS */
+
+.icono-control {
+    font-family: Arial, sans-serif;
+    font-size: 5vw;
+    font-weight: 500;
+    color: #8baac6;
+    line-height: 1;
+    user-select: none;
+}
+
+/* BOTÓN CENTRAL */
+
+.boton-play {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    background-color: #8baac6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.boton-play:active {
+    transform: scale(0.94);
+}
+
+#iconoPlay {
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    margin-left: 3px;
+    line-height: 1;
+}
+
+/* TABLETS / COMPUTADOR */
+
+@media (min-width: 768px) {
+
+    .reproductor-musica {
+        width: 650px;
+    }
+
+    .texto-musica {
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
+
+    .barra-musica {
+        height: 5px;
+    }
+
+    .tiempos-musica {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .icono-control {
+        font-size: 30px;
+    }
+
+    .boton-play {
+        width: 70px;
+        height: 70px;
+    }
+
+    #iconoPlay {
+        font-size: 28px;
+    }
 }
