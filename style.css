@@ -319,12 +319,9 @@ body {
 
 .barra-musica {
     position: relative;
-
     width: 100%;
-    height: 4px;
-
+    height: 6px; /* antes: 4px */
     background-color: rgba(139, 170, 198, 0.30);
-
     border-radius: 10px;
 }
 
@@ -349,17 +346,15 @@ body {
 
 .punto-progreso {
     position: absolute;
-
     top: 50%;
     left: 0%;
 
-    width: 10px;
-    height: 10px;
+    width: 11px; /* antes: 10px */
+    height: 11px; /* antes: 10px */
 
     transform: translate(-50%, -50%);
 
     background-color: #8baac6;
-
     border-radius: 50%;
 }
 
