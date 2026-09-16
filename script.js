@@ -223,3 +223,32 @@ if (document.readyState === 'loading') {
     iniciarReproductor();
 
 }
+
+
+
+/* =========================================
+   BOTÓN WHATSAPP - ROTACIÓN ALEATORIA
+   ========================================= */
+
+const botonWhatsApp = document.getElementById('botonWhatsApp');
+
+if (botonWhatsApp) {
+
+    const linksWhatsApp = [
+        'https://wa.link/px4slk',
+        'https://wa.link/xq8425'
+    ];
+
+    botonWhatsApp.addEventListener('click', function(e) {
+
+        e.preventDefault();
+
+        // Elegir uno de los dos enlaces al azar
+        const linkAleatorio =
+            linksWhatsApp[Math.floor(Math.random() * linksWhatsApp.length)];
+
+        // Abrir el enlace elegido
+        window.open(linkAleatorio, '_blank');
+
+    });
+}
